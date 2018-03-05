@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module interpretRand(
+module interpretVal(
 input [7:0] data, input mode, 
 output [7:0] val, output neg
 );

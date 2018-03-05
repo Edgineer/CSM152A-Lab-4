@@ -11,7 +11,7 @@ module interpretRand_tb;
 	wire neg;
 
 	// Instantiate the Unit Under Test (UUT)
-	interpretRand uut (
+	interpretVal uut (
 		.data(data),
 		.mode(mode),
 		.val(val),
