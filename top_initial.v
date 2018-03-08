@@ -9,19 +9,19 @@ module top_initial(
 );
 
 reg game_mode = 0; //Unsigned (0) by default, Two's Complement Mode (1)
-reg player1game_started = 0;
-reg player2game_started = 0;
+reg p1game_started = 0;
+reg p2game_started = 0;
 
 always @ (posedge DOWN) begin // press down to iterate through the game modes
-	if (player1game_started == 0 && player2game_started == 0) begin //only change modes if the game hasn't started
+	if (p1game_started == 0 && p2game_started == 0) begin //only change modes if the game hasn't started
 		game_mode = ~game_mode;
 	end
 
-	if (game_mode == 1 && player1game_started == 0 && player2game_started == 0) begin //turn on LED lights
+	if (game_mode == 1 && p1game_started == 0 && p2game_started == 0) begin //turn on LED lights
 		Led = 8'b11111111;
 	end
 
-	else if (game_mode == 0 && player1game_started == 0 && player2game_started == 0) begin //turn off LED lights
+	else if (game_mode == 0 && p1game_started == 0 && p2game_started == 0) begin //turn off LED lights
 		Led = 8'b00000000;
 	end
 
